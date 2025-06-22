@@ -276,33 +276,38 @@ GROUP BY 1;
 
 ## Findings and Conclusion
 
+* **More Movies than Shows**
+  - The data shows that Netflix hosts more movies than TV shows.
+  - This suggests the platform leans more towards one-off content rather than episodic series.
 
-###  More Movies than Shows
-The data shows that Netflix hosts more movies than TV shows. This suggests that the platform leans more towards one-off content experiences rather than episodic storytelling.
+* **Most Common Ratings**
+  - TV-MA and TV-14 are the most frequent ratings.
+  - This indicates that Netflix mainly targets mature teens and adult viewers.
 
-###  Most Common Ratings
-TV-MA and TV-14 are the most frequent ratings across the platform, which points to Netflix mainly targeting mature teens and adult audiences.
+* **Top Countries & India’s Role**
+  - The US, India, and the UK contribute the most content to Netflix.
+  - Content from India has grown in recent years, showing an increase in regional production.
 
-###  Top Countries & India’s Role
-The United States, India, and the UK are the top contributors in terms of content volume. In India’s case, content releases have varied year to year, but recent years show a noticeable increase in contributions.
+* **Popular Genres**
+  - Drama, International Movies, and Comedies are the most listed genres.
+  - This aligns with Netflix’s global strategy to offer content for a wide range of tastes.
 
-###  Popular Genres
-Genres like Drama, International Movies, and Comedies are among the most commonly listed. This aligns with Netflix’s global content strategy to appeal to different viewer preferences.
+* **Longer Series & Movies**
+  - I identified the longest movie and filtered out TV shows with more than 5 seasons.
+  - This points to Netflix's investment in long-form content that encourages binge-watching.
 
-###  Longer Series & Movies
-By identifying the longest movie and isolating shows with more than 5 seasons, the data highlights Netflix’s investment in longer-form content that keeps users engaged over time.
+* **Keyword-Based Content Categorization**
+  - By checking for keywords like “kill” and “violence” in descriptions, content was labeled as either ‘Bad’ or ‘Good’.
+  - This simple categorization gives insight into the presence of intense or violent content.
 
-###  Keyword-Based Content Categorization
-Using keywords like "kill" and "violence" in the description, I grouped content as either 'Good' or 'Bad'. This simple flagging mechanism gives an idea of how much intense or violent content exists on the platform.
+* **Director & Actor Highlights**
+  - I listed all content by directors like Rajiv Chilaka.
+  - Also found the top 10 actors who appear most often in Indian movies on Netflix.
 
-###  Director & Actor Highlights
-I pulled all shows and movies by specific directors like Rajiv Chilaka and also identified the top 10 actors most frequently appearing in Indian-produced films. This helps highlight consistent contributors to the platform.
+* **Cleaning & Processing Techniques**
+  - Used SQL functions like `UNNEST`, `SPLIT_PART`, and `STRING_TO_ARRAY` to break down multi-valued columns.
+  - This made the data easier to clean, filter, and analyze effectively.
 
-###  Cleaning & Processing Techniques
-To clean up multi-valued fields like genre, country, and cast, I used SQL functions like `UNNEST`, `SPLIT_PART`, and `STRING_TO_ARRAY`. This allowed me to break down and analyze the data more effectively.
+---
 
-
-Overall, this project gave me hands-on experience in writing advanced SQL queries and analyzing real-world data. It helped me better understand how platforms like Netflix distribute, categorize, and curate content, and how SQL can be used to answer actual business questions.
-
-
-This analysis provides a comprehensive view of Netflix's content and can help inform content strategy and decision-making.
+Overall, this project helped me practice advanced SQL techniques and understand how to extract useful business insights from real-world datasets. It reflects the kind of work a data analyst might do when exploring platform performance and content strategy.
