@@ -1,33 +1,4 @@
 -- Netflix Project
-
-CREATE TABLE netflix
-(
-	show_id	VARCHAR(6),
-	type 	VARCHAR(10),
-	title 	VARCHAR(150),
-	director	VARCHAR(208),
-	casts	VARCHAR(1000),
-	country	VARCHAR(150),	
-	date_added VARCHAR(50),
-	release_year INT,
-	rating VARCHAR(10),
-	duration VARCHAR(15),
-	listed_in VARCHAR(100),
-	description VARCHAR(250)
-);
-
-SELECT * FROM netflix;
-
-
-SELECT COUNT(*) AS total_content FROM netflix;
-
-
-SELECT 
-	DISTINCT type 
-FROM netflix;
-
-
-
 -- Business Problems based on this dataset
 
 -- 1. Count the number of Movies vs TV Shows
@@ -68,7 +39,7 @@ WHERE
 	AND
 	release_year=2020;
 
---4. Find the top 5 countries with the most content on Netflix
+-- 4. Find the top 5 countries with the most content on Netflix
 
 SELECT
 	TRIM(UNNEST(STRING_TO_ARRAY(country, ','))) as new_country,
@@ -81,7 +52,7 @@ GROUP BY 1
 ORDER BY 2 DESC
 LIMIT 5;
 
---5. Identify the longest movie
+-- 5. Identify the longest movie
 
 SELECT
 	title,
@@ -94,7 +65,7 @@ WHERE
 ORDER BY 2 DESC
 LIMIT 1;
 
---6. Find the content added in the last 5 years
+-- 6. Find the content added in the last 5 years
 
 SELECT 
 	*
@@ -102,7 +73,7 @@ FROM netflix
 WHERE 
 	TO_Date(date_added, 'Month DD, YYYY') >= CURRENT_DATE- INTERVAL '5 years'
 
---7. Find all the movies/TV shows by director 'Rajiv Chilaka' !
+-- 7. Find all the movies/TV shows by director 'Rajiv Chilaka' !
 
 	--We have multiple directors in a few movies/ TV shows
 	--ILIKE function ignore case of the string to be cheked (Will be treated as 'rajiv chilaka')
@@ -111,7 +82,7 @@ SELECT
 FROM netflix
 WHERE director ILIKE '%Rajiv Chilaka%';
 
---8. List all TV shows with more than 5 seasons
+-- 8. List all TV shows with more than 5 seasons
 
 	--Solution 1 (Using SUBSTRING Function)
 SELECT 
@@ -132,7 +103,7 @@ WHERE
 	SPLIT_PART(duration, ' ', 1):: INT > 5;
 
 
---9. Count the number of content items in each genre
+-- 9. Count the number of content items in each genre
 
 	--Solution 1(Using UNNEST and STRING_TO_ARRAY Functions)
 SELECT
@@ -142,7 +113,7 @@ FROM netflix
 GROUP BY 1;
 
 
---10. Find each year and the average numbers of content release in India on netflix. return top 5 year with highest avg content release !
+-- 10. Find each year and the average numbers of content release in India on netflix. return top 5 year with highest avg content release !
 
 	--Subquerry return the value of total content by India over the years
 	--Count(*) return the total content added in that particular year (Look at Group By carefully)
@@ -156,7 +127,7 @@ WHERE
 GROUP BY 1;
 
 
---11. List all the movies that are documentaries
+-- 11. List all the movies that are documentaries
 
 SELECT 
 	*
@@ -166,7 +137,7 @@ WHERE
 	AND
 	listed_in ILIKE '%documentaries%';
 
---12. Find all content without a director
+-- 12. Find all content without a director
 
 SELECT 
 	*
@@ -174,7 +145,7 @@ FROM netflix
 WHERE 
 	director IS NULL;
 
---13. Find how many movies actor 'Salman Khan' appeared in last 10 years!
+-- 13. Find how many movies actor 'Salman Khan' appeared in last 10 years!
 
 SELECT
 	COUNT(*) as Salman_movies
@@ -184,7 +155,7 @@ WHERE
 	AND
 	release_year > EXTRACT(YEAR FROM CURRENT_DATE) -10;
 
---14. Find the top 10 actos who have appeared in the highest number of Movies produced in India.
+-- 14. Find the top 10 actos who have appeared in the highest number of Movies produced in India.
 
 SELECT
 	UNNEST(STRING_TO_ARRAY(casts,',')) as Actors,
@@ -198,7 +169,7 @@ GROUP BY 1
 ORDER BY 2 DESC
 LIMIT 10;
 
---15. Categorize the content based on the presence of the keywords 'kill' and 'violence' in the description field. 
+-- 15. Categorize the content based on the presence of the keywords 'kill' and 'violence' in the description field. 
 	--Label content containing these keywords as 'Bad' and all other content as 'Good'. 
 	--Count how many items fall into each category.
 
