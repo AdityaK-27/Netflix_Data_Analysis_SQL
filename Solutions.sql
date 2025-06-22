@@ -30,7 +30,7 @@ WHERE
 
 -- 3. List all movies released in a specific year (eg. 2020)
 
-	-- filter 202
+	-- filter 2020
 	--movies
 	
 SELECT * FROM netflix
