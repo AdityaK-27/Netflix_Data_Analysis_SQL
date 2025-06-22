@@ -170,6 +170,7 @@ WHERE
 ### 9. Count the Number of Content Items in Each Genre
 
 ```sql
+--Solution 1(Using UNNEST and STRING_TO_ARRAY Functions)
 SELECT
 	UNNEST(STRING_TO_ARRAY(listed_in, ',')) AS genre,
 	COUNT(show_id) as total_content
