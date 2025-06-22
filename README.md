@@ -276,9 +276,33 @@ GROUP BY 1;
 
 ## Findings and Conclusion
 
-- **Content Distribution:** The dataset contains a diverse range of movies and TV shows with varying ratings and genres.
-- **Common Ratings:** Insights into the most common ratings provide an understanding of the content's target audience.
-- **Geographical Insights:** The top countries and the average content releases by India highlight regional content distribution.
-- **Content Categorization:** Categorizing content based on specific keywords helps in understanding the nature of content available on Netflix.
+
+###  More Movies than Shows
+The data shows that Netflix hosts more movies than TV shows. This suggests that the platform leans more towards one-off content experiences rather than episodic storytelling.
+
+###  Most Common Ratings
+TV-MA and TV-14 are the most frequent ratings across the platform, which points to Netflix mainly targeting mature teens and adult audiences.
+
+###  Top Countries & India’s Role
+The United States, India, and the UK are the top contributors in terms of content volume. In India’s case, content releases have varied year to year, but recent years show a noticeable increase in contributions.
+
+###  Popular Genres
+Genres like Drama, International Movies, and Comedies are among the most commonly listed. This aligns with Netflix’s global content strategy to appeal to different viewer preferences.
+
+###  Longer Series & Movies
+By identifying the longest movie and isolating shows with more than 5 seasons, the data highlights Netflix’s investment in longer-form content that keeps users engaged over time.
+
+###  Keyword-Based Content Categorization
+Using keywords like "kill" and "violence" in the description, I grouped content as either 'Good' or 'Bad'. This simple flagging mechanism gives an idea of how much intense or violent content exists on the platform.
+
+###  Director & Actor Highlights
+I pulled all shows and movies by specific directors like Rajiv Chilaka and also identified the top 10 actors most frequently appearing in Indian-produced films. This helps highlight consistent contributors to the platform.
+
+###  Cleaning & Processing Techniques
+To clean up multi-valued fields like genre, country, and cast, I used SQL functions like `UNNEST`, `SPLIT_PART`, and `STRING_TO_ARRAY`. This allowed me to break down and analyze the data more effectively.
+
+
+Overall, this project gave me hands-on experience in writing advanced SQL queries and analyzing real-world data. It helped me better understand how platforms like Netflix distribute, categorize, and curate content, and how SQL can be used to answer actual business questions.
+
 
 This analysis provides a comprehensive view of Netflix's content and can help inform content strategy and decision-making.
