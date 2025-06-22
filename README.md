@@ -182,6 +182,8 @@ GROUP BY 1;
 ### 10.Find each year and the average numbers of content release in India on netflix. return top 5 year with highest avg content release !
 
 ```sql
+--Subquerry return the value of total content by India over the years
+--Count(*) return the total content added in that particular year (Look at Group By carefully)
 SELECT
 	EXTRACT(YEAR FROM TO_DATE(date_added, 'Month DD, YYYY')) as year,
 	COUNT(*) AS yearly_content,
