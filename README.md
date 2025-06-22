@@ -155,7 +155,7 @@ WHERE
 	AND
 	SUBSTRING(duration, 1,2):: INT > 5;
 
-	--Solution 2 (Using SPLIT_PART Function)
+--Solution 2 (Using SPLIT_PART Function)
 SELECT 
 	*
 FROM netflix
