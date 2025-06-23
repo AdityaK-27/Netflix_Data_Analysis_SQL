@@ -8,9 +8,9 @@ This project dives into Netflix’s content catalog to perform an in-depth analy
 ## Objectives
 
 - Study how content is distributed between Movies and TV Shows.
--Discover which ratings appear most often across different content types.
--Investigate trends based on release year, country of origin, and duration.
--Classify content using keyword-based logic to extract targeted insights.
+- Discover which ratings appear most often across different content types.
+- Investigate trends based on release year, country of origin, and duration.
+- Classify content using keyword-based logic to extract targeted insights.
 
 ## Dataset
 
